@@ -9,7 +9,6 @@ interface GridProps {
 const Grid: React.FC<GridProps> = () => {
   return (
     <body>
-
     </body>
   );
 };

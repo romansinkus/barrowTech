@@ -1,3 +1,4 @@
+import ControlPanel from "../components/ControllPanel"
 import Grid from "../components/Grid"
 
 function Home() {
@@ -5,6 +6,7 @@ function Home() {
   return (
     <>
     <div>
+        <ControlPanel/>
         <Grid rows={10} columns = {10}/>
     </div>
       

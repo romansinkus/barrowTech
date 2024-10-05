@@ -1,0 +1,22 @@
+.panel {
+    background-color: #959595;
+    position: fixed;
+    top: 20px; 
+    left: 20px;   
+    width: 250px;  
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); 
+    border-radius: 15px; 
+    padding: 20px;
+    height: calc(100vh - 80px);
+    z-index: 10; 
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    margin: 10px 0;
+  }
+  

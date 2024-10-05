@@ -1,4 +1,4 @@
-import ControlPanel from "../components/ControllPanel"
+import ControlPanel from "../components/ControlPanel"
 import Grid from "../components/Grid"
 
 function Home() {

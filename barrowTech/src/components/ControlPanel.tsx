@@ -5,7 +5,11 @@ function ControlPanel() {
   return (
     <>
     <div className="panel">
-        <h1>Title</h1>
+        <div className='header'>        
+            <img src='logo.png' height={40} width={40}></img>
+            <h2>BarrowTech</h2>
+        </div>
+
         <ul>
             <li>slider 1</li>
             <li>slider 2</li>

@@ -7,6 +7,7 @@ import { testRunMatlab } from '../api';
 
 function ControlPanel(props:any) {
   const [sliderValues, setSliderValues] = useState([0.1, 50]);
+  const [simulationResult, setSimulationResult] = useState(null);
 
   const handleSliderChange = (index: number) => (event: Event, newValue: number | number[]) => {
     const newSliderValues = [...sliderValues];
@@ -18,12 +19,12 @@ function ControlPanel(props:any) {
   };
 
 
-  const handleSimulate = (inputParam1: number, inputParam2: number) => {
+  async function handleSimulate (inputParam1: number, inputParam2: number) {
     console.log("Slider values:", sliderValues);
     console.log(inputParam1);
     console.log(inputParam2);
-    testRunMatlab(inputParam1, inputParam2);
-
+    const result = await testRunMatlab(inputParam1, inputParam2);
+    setSimulationResult(result)
   };
 
   return (
@@ -47,6 +48,12 @@ function ControlPanel(props:any) {
           <Button variant="outlined" size='large' sx={{color: "black"}} onClick={() => handleSimulate(sliderValues[0], sliderValues[1])}>SIMULATE</Button>
 
         </div>
+        {simulationResult && (
+          <div className="result">
+            <h3>Simulation Result:</h3>
+            <p>{simulationResult}</p>
+          </div>
+        )}
     </div>
       
     </>

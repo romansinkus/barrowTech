@@ -2,6 +2,7 @@ import { Button } from '@mui/material';
 import './ControlPanel.css';
 import {Slider }from '@mui/material';
 import { useState } from 'react';
+import { testRunMatlab } from '../api';
 
 
 function ControlPanel(props:any) {
@@ -17,8 +18,11 @@ function ControlPanel(props:any) {
   };
 
 
-  const handleSimulate = () => {
+  const handleSimulate = (inputParam1: number, inputParam2: number) => {
     console.log("Slider values:", sliderValues);
+    console.log(inputParam1);
+    console.log(inputParam2);
+    testRunMatlab(inputParam1, inputParam2);
 
   };
 
@@ -40,7 +44,7 @@ function ControlPanel(props:any) {
 
         </ul>
         <div className='simulate-button'>
-          <Button variant="outlined" size='large' sx={{color: "black"}} onClick={handleSimulate}>SIMULATE</Button>
+          <Button variant="outlined" size='large' sx={{color: "black"}} onClick={() => handleSimulate(sliderValues[0], sliderValues[1])}>SIMULATE</Button>
 
         </div>
     </div>

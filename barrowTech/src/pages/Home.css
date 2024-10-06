@@ -65,11 +65,26 @@
 
   }
 
+  @keyframes slideInFromTop {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  
+
   .logo h2 {
     /* font-family: 'Figtree', sans-serif; */
     font-family: 'moonhouse';
     color: #585858;
     animation: breathing 3s ease-in-out infinite;
+    animation: slideInFromTop 1s ease-out;
+
 
 
   }
@@ -79,5 +94,14 @@
     src: url('moonhouse.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
+  }
+  
+  .svg-logo {
+    position: absolute;
+    top: 20px; 
+    right: 20px; 
+    width: 30px; 
+    height: 30px; 
+    z-index: 2  ;
   }
   

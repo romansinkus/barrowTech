@@ -78,7 +78,8 @@
 
   .logo h2 {
     /* font-family: 'Figtree', sans-serif; */
-    font-family: 'moonhouse';
+    font-family: 'Orbitron', sans-serif;
+    /* font-family: 'moonhouse'; */
     color: #585858;
     animation: breathing 3s ease-in-out infinite;
     animation: slideInFromTop 1s ease-out;

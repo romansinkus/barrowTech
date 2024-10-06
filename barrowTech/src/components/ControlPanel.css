@@ -23,7 +23,9 @@
   }
 
   .header h2 {
-    font-family: 'moonhouse';
+    /* font-family: 'moonhouse'; */
+    font-family: 'Orbitron', sans-serif;
+
   }
 
   .header h3 {

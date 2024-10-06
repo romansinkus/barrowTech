@@ -35,6 +35,7 @@ const Wheelbarrow: React.FC = () => {
         .load(
             'barrow2.obj',
             (object) => {
+                
                 wheelbarrow = object
                 wheelbarrow.scale.set(1, 1, 1)
                 wheelbarrow.position.y = -2

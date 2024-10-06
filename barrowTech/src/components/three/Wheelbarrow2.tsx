@@ -3,8 +3,10 @@ import * as THREE from 'three';
 import { MTLLoader } from 'three/examples/jsm/loaders/MTLLoader.js'
 import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
 
+function Wheelbarrow2(props : any) {
+  console.log(props);
+  const wheelbarrowRef = useRef<THREE.Object3D | null>(null); // Reference to the wheelbarrow object
 
-const Wheelbarrow2: React.FC = () => {
 
   const mountRef = useRef<HTMLDivElement | null>(null);
   
@@ -52,6 +54,8 @@ const Wheelbarrow2: React.FC = () => {
         .load(
             'barrow2.obj',
             (object) => {
+              wheelbarrowRef.current = object;
+
                 
                 wheelbarrow = object
                 wheelbarrow.scale.set(1, 1, 1)
@@ -72,18 +76,9 @@ const Wheelbarrow2: React.FC = () => {
 
     })
 
-
-
-    
-
-
-
     const animate = () => {
       requestAnimationFrame(animate);
-    if (wheelbarrow) {
-        // wheelbarrow.rotation.y += 0.01;
-    }
-    
+
       renderer.render(scene, camera);
     };
     animate();
@@ -91,9 +86,14 @@ const Wheelbarrow2: React.FC = () => {
     return () => {
       if (mountRef.current) {
         mountRef.current.removeChild(renderer.domElement);
+      
+      }
+
+      if (wheelbarrowRef.current) {
+        wheelbarrowRef.current.rotation.x += props.rotation; 
       }
     };
-  }, []);
+  }, [props.rotation]);
 
   return <div ref={mountRef} style={{ position: 'relative', width: '100%', height: '100vh' }} />;
 };

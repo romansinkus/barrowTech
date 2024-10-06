@@ -10,11 +10,18 @@ function Home() {
   const [showBarrow, setShowBarrow] = useState(true);
   const [panelVisible, setPanelVisible] = useState(false);
   const [barrowMass, setBarrowMass] = useState<number>();
+  const [liftHeight, setliftHeight] = useState<number>();
+
 
   const barrowMassChange = useCallback((newMass:number) => {
     setBarrowMass(newMass);
     console.log(newMass);
   }, [setBarrowMass])
+
+  const LiftHeightChange = useCallback((newHeight:number) => {
+    setliftHeight(newHeight);
+    console.log(newHeight);
+  }, [setliftHeight])
 
   const handleClick = () => {
     setPanelVisible(true);
@@ -35,23 +42,19 @@ function Home() {
       {!showBarrow && <img src="home.svg" alt="Logo" className="svg-logo" onClick={handleHome} />}
 
       <Grid />
-      {/* {!showBarrow && (
-            <div className='home-screen'>
 
-            </div>
-        )}   */}
         {panelVisible && (
           <div className="control-panel">
             {(barrowMass ?? 0) > 70 && <img src='gravel.png' className={"gravel"} height={200} width={200} hidden={false}></img>}
             {(barrowMass ?? 0) > 35 && <img src='gravel.png' className={"gravel2"} height={200} width={200} hidden={false}></img>}
             <img src='gravel.png' className={"gravel3"} height={200} width={200}></img>
-            <ControlPanel onMassChange={barrowMassChange}/>
-            <Wheelbarrow2 />
+            <ControlPanel onMassChange={barrowMassChange} onHeightChange={LiftHeightChange}/>
+            <Wheelbarrow2 rotation={liftHeight}/>
 
           </div>
         )}
 
-
+        
         {showBarrow && (
             
           <div className='prehome-screen'>
@@ -64,10 +67,9 @@ function Home() {
             <Wheelbarrow />
             <div className="button-container">
                     
-                <Button onClick={handleClick} variant="outlined" size='large' sx={{color: "#696969", width: '200px', height: '60px' }}  >START</Button>
+                <Button onClick={handleClick} variant="outlined" size='large' sx={{color: "#585858", width: '200px', height: '60px' }}  >START</Button>
 
             </div>
-            {/* <Cube/> */}
           </div>
 
         )}

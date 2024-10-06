@@ -48,11 +48,16 @@ function ControlPanel(props:any) {
           <Button variant="outlined" size='large' sx={{color: "black"}} onClick={() => handleSimulate(sliderValues[0], sliderValues[1])}>SIMULATE</Button>
 
         </div>
-        {simulationResult && (
+        {simulationResult && (<>
+
           <div className="result">
             <h3>Simulation Result:</h3>
             <p>{simulationResult}</p>
           </div>
+          <div className='result-screen'>
+              Place load {simulationResult} metres past fulcrum.
+          </div>
+          </>
         )}
     </div>
       

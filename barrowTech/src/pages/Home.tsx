@@ -1,4 +1,4 @@
-import {useState } from 'react';
+import {useCallback, useState } from 'react';
 import ControlPanel from "../components/ControlPanel";
 import Grid from "../components/Grid";
 import './Home.css'; 
@@ -9,6 +9,12 @@ import Wheelbarrow2 from '../components/three/Wheelbarrow2';
 function Home() {
   const [showBarrow, setShowBarrow] = useState(true);
   const [panelVisible, setPanelVisible] = useState(false);
+  const [barrowMass, setBarrowMass] = useState<number>();
+
+  const barrowMassChange = useCallback((newMass:number) => {
+    setBarrowMass(newMass);
+    console.log(newMass);
+  }, [setBarrowMass])
 
   const handleClick = () => {
     setPanelVisible(true);
@@ -26,7 +32,7 @@ function Home() {
   return (
     <div style={{ height: '100vh', cursor: 'pointer' }}>
       <div className="home">
-      <img src="home.svg" alt="Logo" className="svg-logo" onClick={handleHome} />
+      {!showBarrow && <img src="home.svg" alt="Logo" className="svg-logo" onClick={handleHome} />}
 
       <Grid />
       {/* {!showBarrow && (
@@ -36,10 +42,10 @@ function Home() {
         )}   */}
         {panelVisible && (
           <div className="control-panel">
-            <img src='gravel.png' className={"gravel"} height={200} width={200} hidden={false}></img>
-            <img src='gravel.png' className={"gravel2"} height={200} width={200} hidden={false}></img>
+            {(barrowMass ?? 0) > 70 && <img src='gravel.png' className={"gravel"} height={200} width={200} hidden={false}></img>}
+            {(barrowMass ?? 0) > 35 && <img src='gravel.png' className={"gravel2"} height={200} width={200} hidden={false}></img>}
             <img src='gravel.png' className={"gravel3"} height={200} width={200}></img>
-            <ControlPanel />
+            <ControlPanel onMassChange={barrowMassChange}/>
             <Wheelbarrow2 />
 
           </div>

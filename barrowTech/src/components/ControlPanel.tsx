@@ -4,13 +4,16 @@ import {Slider }from '@mui/material';
 import { useState } from 'react';
 
 
-function ControlPanel() {
+function ControlPanel(props:any) {
   const [sliderValues, setSliderValues] = useState([50, 50, 50]);
 
   const handleSliderChange = (index: number) => (event: Event, newValue: number | number[]) => {
     const newSliderValues = [...sliderValues];
     newSliderValues[index] = newValue as number; 
     setSliderValues(newSliderValues);
+    if(index == 1){
+      props.onMassChange(newSliderValues[index]);
+    }
   };
 
 

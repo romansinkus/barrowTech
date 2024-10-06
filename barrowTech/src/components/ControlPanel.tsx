@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 
 function ControlPanel(props:any) {
-  const [sliderValues, setSliderValues] = useState([50, 50, 50]);
+  const [sliderValues, setSliderValues] = useState([0.1, 50]);
 
   const handleSliderChange = (index: number) => (event: Event, newValue: number | number[]) => {
     const newSliderValues = [...sliderValues];
@@ -33,10 +33,10 @@ function ControlPanel(props:any) {
 
         <ul>
             <li>Lifting Height (m)</li>
-            <Slider defaultValue={0.5} aria-label="Default" valueLabelDisplay="auto" sx={{color: '#696969'}}   min={0}
+            <Slider marks={[{value: 0, label: 0},{value: 1, label: 1}]} defaultValue={0.5} aria-label="Default" valueLabelDisplay="auto" sx={{color: '#696969'}}   min={0}
   max={1}step={0.01} onChange={handleSliderChange(0)} />
             <li>Gravel Mass (lbs)</li>
-            <Slider defaultValue={50} aria-label="Default" valueLabelDisplay="auto" sx={{color: '#696969'}} onChange={handleSliderChange(1)}/>
+            <Slider marks={[{value: 0, label: 0},{value: 100, label: 100}]} defaultValue={50} aria-label="Default" valueLabelDisplay="auto" sx={{color: '#696969'}} onChange={handleSliderChange(1)}/>
 
         </ul>
         <div className='simulate-button'>

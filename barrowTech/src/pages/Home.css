@@ -38,6 +38,22 @@
     z-index: 1;
   }
 
+  @keyframes breathing {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.01);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  
   .logo {
     display: flex;
     /* justify-content: space-between; */
@@ -50,7 +66,18 @@
   }
 
   .logo h2 {
-    font-family: 'Figtree', sans-serif;
+    /* font-family: 'Figtree', sans-serif; */
+    font-family: 'moonhouse';
     color: #585858;
+    animation: breathing 3s ease-in-out infinite;
+
 
   }
+
+  @font-face {
+    font-family: 'moonhouse';
+    src: url('moonhouse.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  

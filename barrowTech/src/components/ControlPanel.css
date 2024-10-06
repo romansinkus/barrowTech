@@ -17,13 +17,13 @@
     display: flex;
     /* justify-content: space-between; */
     align-items: center;
-    margin-left: 34px;
+    margin-left: 15px;
     margin-right: 38px;
     height: 40px
   }
 
   .header h2 {
-    font-family: 'Figtree', sans-serif;
+    font-family: 'moonhouse';
   }
   
   ul {
@@ -41,5 +41,13 @@
     align-items: center;
     justify-content: center;
     display: flex;
+  }
+  
+  
+  @font-face {
+    font-family: 'moonhouse';
+    src: url('moonhouse.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
   }
   

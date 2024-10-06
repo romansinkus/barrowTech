@@ -16,6 +16,7 @@ function ControlPanel() {
 
   const handleSimulate = () => {
     console.log("Slider values:", sliderValues);
+    
   };
 
   return (

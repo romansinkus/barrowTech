@@ -28,6 +28,9 @@ function Home() {
         )}   */}
         {panelVisible && (
           <div className="control-panel">
+            <img src='gravel.png' className={"gravel"} height={200} width={200} hidden={false}></img>
+            <img src='gravel.png' className={"gravel2"} height={200} width={200} hidden={false}></img>
+            <img src='gravel.png' className={"gravel3"} height={200} width={200}></img>
             <ControlPanel />
             <Wheelbarrow2 />
 

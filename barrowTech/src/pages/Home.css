@@ -54,3 +54,24 @@
     color: #585858;
 
   }
+
+  .gravel {
+    position: absolute;
+    left: 62%;
+    top: 27%;
+    rotate: 15deg;
+  }
+  
+  .gravel2 {
+    position: absolute;
+    left: 59%;
+    top: 30%;
+    rotate: 19deg;
+  }
+
+  .gravel3 {
+    position: absolute;
+    left: 63%;
+    top: 32.5%;
+    rotate: 15deg;
+  }

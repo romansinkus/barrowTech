@@ -26,8 +26,11 @@ function Home() {
         )}
         <Grid />
         {showCube && (
+            
           <div className='prehome-screen'>
+            
             <div className="button-container">
+                
             <Button variant="outlined" size='large' sx={{color: "#696969", width: '200px', height: '60px' }}  >START</Button>
 
             </div>

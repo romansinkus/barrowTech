@@ -1,0 +1,6 @@
+/* App.css or index.css */
+body {
+  margin: 0;
+  overflow: hidden; /* Prevent scroll bars from appearing */
+  background-color: rgba(255, 255, 255, 0.5); /* Set a semi-transparent background */
+}

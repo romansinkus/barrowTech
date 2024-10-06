@@ -24,9 +24,33 @@
   
   .button-container {
     position: absolute; 
-    top: 24%; 
+    top: 75%; 
+    left: 80%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+
+  .logo-container {
+    position: absolute; 
+    top: 32%; 
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
   }
-  
+
+  .logo {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    height: 40px;
+    font-size: 110px;
+    z-index: 0; 
+    
+
+  }
+
+  .logo h2 {
+    font-family: 'Figtree', sans-serif;
+    color: #585858;
+
+  }

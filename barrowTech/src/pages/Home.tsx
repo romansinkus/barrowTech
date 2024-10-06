@@ -1,7 +1,6 @@
 import {useState } from 'react';
 import ControlPanel from "../components/ControlPanel";
 import Grid from "../components/Grid";
-import Cube from "../components/three/Test";
 import './Home.css'; 
 import { Button } from '@mui/material';
 import Wheelbarrow from '../components/three/Wheelbarrow';
@@ -19,7 +18,7 @@ function Home() {
   };
 
   return (
-    <div onClick={handleClick} style={{ height: '100vh', cursor: 'pointer' }}>
+    <div style={{ height: '100vh', cursor: 'pointer' }}>
       <div className="home">
       <Grid />
       {/* {!showBarrow && (
@@ -40,12 +39,18 @@ function Home() {
             
           <div className='prehome-screen'>
             
-            <div className="button-container">
-                
-            <Button variant="outlined" size='large' sx={{color: "#696969", width: '200px', height: '60px' }}  >START</Button>
-
+            <div className="logo-container">
+                <div className='logo'>        
+                        {/* <img src='logo.png' height={200} width={200}></img> */}
+                        <h2>BarrowTech</h2>
+                </div>
             </div>
             <Wheelbarrow />
+            <div className="button-container">
+                    
+                <Button onClick={handleClick} variant="outlined" size='large' sx={{color: "#696969", width: '200px', height: '60px' }}  >START</Button>
+
+            </div>
             {/* <Cube/> */}
           </div>
 

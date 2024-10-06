@@ -2,6 +2,8 @@ import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import { MTLLoader } from 'three/examples/jsm/loaders/MTLLoader.js'
 import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
+import './Wheelbarrow.css'; 
+
 
 
 const Wheelbarrow: React.FC = () => {
@@ -93,7 +95,7 @@ const Wheelbarrow: React.FC = () => {
     };
   }, []);
 
-  return <div ref={mountRef} style={{ position: 'relative', width: '100%', height: '100vh' }} />;
+  return <div className='wheelbarrow' ref={mountRef} style={{ position: 'relative', width: '100%', height: '100vh' }} />;
 };
 
 export default Wheelbarrow;

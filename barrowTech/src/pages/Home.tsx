@@ -4,6 +4,7 @@ import Grid from "../components/Grid";
 import Cube from "../components/three/Test";
 import './Home.css'; 
 import { Button } from '@mui/material';
+import Wheelbarrow from '../components/three/Wheelbarrow';
 
 function Home() {
   const [showCube, setShowCube] = useState(true);
@@ -25,6 +26,7 @@ function Home() {
           </div>
         )}
         <Grid />
+
         {showCube && (
             
           <div className='prehome-screen'>
@@ -34,7 +36,8 @@ function Home() {
             <Button variant="outlined" size='large' sx={{color: "#696969", width: '200px', height: '60px' }}  >START</Button>
 
             </div>
-            <Cube />
+            <Wheelbarrow />
+            {/* <Cube/> */}
           </div>
         )}  
       </div>

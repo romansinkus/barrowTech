@@ -37,7 +37,7 @@ function ControlPanel() {
 
         </ul>
         <div className='simulate-button'>
-          <Button variant="outlined" sx={{color: "#696969"}} onClick={handleSimulate}>Simulate</Button>
+          <Button variant="outlined" size='large' sx={{color: "black"}} onClick={handleSimulate}>SIMULATE</Button>
 
         </div>
     </div>

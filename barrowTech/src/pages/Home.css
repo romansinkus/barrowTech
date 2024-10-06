@@ -15,6 +15,18 @@
     }
 }
 
-.cube-hidden {
-    display: none; 
-}
+.prehome-screen {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .button-container {
+    position: absolute; 
+    top: 30%; 
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Offset to truly center */
+    z-index: 1; /* Ensure button is on top */
+  }
+  

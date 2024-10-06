@@ -3,6 +3,7 @@ import ControlPanel from "../components/ControlPanel";
 import Grid from "../components/Grid";
 import Cube from "../components/three/Test";
 import './Home.css'; 
+import { Button } from '@mui/material';
 
 function Home() {
   const [showCube, setShowCube] = useState(true);
@@ -24,7 +25,15 @@ function Home() {
           </div>
         )}
         <Grid />
-        {showCube && <Cube />}
+        {showCube && (
+          <div className='prehome-screen'>
+            <div className="button-container">
+            <Button variant="outlined" size='large' sx={{color: "#696969", width: '200px', height: '60px' }}  >START</Button>
+
+            </div>
+            <Cube />
+          </div>
+        )}  
       </div>
     </div>
   );

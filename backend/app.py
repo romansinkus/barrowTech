@@ -1,8 +1,11 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import subprocess
 import os
 
 app = Flask(__name__)
+
+CORS(app)
 
 @app.route("/run-matlab", methods=['POST'])
 def run_matlab():
@@ -20,7 +23,7 @@ def run_matlab():
 
         # Assuming 'myScript' is the compiled MATLAB executable
         # result = subprocess.run(['backend/sumtest.exe', param1, param2], capture_output=True, text=True, check=True)
-        result = subprocess.run(['backend/sumtest.exe', param1_str, param2_str], capture_output=True, text=True, check=True)
+        result = subprocess.run(['backend/calcbarrow.exe', param1_str, param2_str], capture_output=True, text=True, check=True)
         # command = ['backend/sumtest.exe', str(param1), str(param2)]
         # result = subprocess.run(command, capture_output=True, text=True, check=True)
 

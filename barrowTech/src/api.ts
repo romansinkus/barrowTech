@@ -1,12 +1,12 @@
 import axios from 'axios';
 
-async function testRunMatlab() {
+export async function testRunMatlab(inputParam1: number, inputParam2: number) {
     const url = 'http://127.0.0.1:5000/run-matlab'; // Update this if your Flask app is hosted elsewhere
     
     // Define the parameters to send
     const params = {
-        param1: 5,
-        param2: 7,
+        param1: inputParam1,
+        param2: inputParam2,
     };
 
     try {
@@ -23,4 +23,4 @@ async function testRunMatlab() {
     }
 }
 
-testRunMatlab();
+testRunMatlab(0.16, 80);

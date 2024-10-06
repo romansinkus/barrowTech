@@ -3,11 +3,14 @@ import subprocess
 def run_matlab_executable(param1, param2):
     # Define the command to run the executable with the parameters
     command = ['backend/sumtest.exe', str(param1), str(param2)]
-    
+
     try:
         # Run the command and capture the output
         result = subprocess.run(command, capture_output=True, text=True, check=True)
         
+        print(str(param1))
+        print(str(param2))
+
         # Print the standard output from the executable
         print("Output:")
         print(result.stdout)

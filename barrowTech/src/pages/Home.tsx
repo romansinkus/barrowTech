@@ -21,12 +21,20 @@ function Home() {
   return (
     <div onClick={handleClick} style={{ height: '100vh', cursor: 'pointer' }}>
       <div className="home">
+      <Grid />
+      {/* {!showBarrow && (
+            <div className='home-screen'>
+
+            </div>
+        )}   */}
         {panelVisible && (
           <div className="control-panel">
             <ControlPanel />
+            <Wheelbarrow2 />
+
           </div>
         )}
-        <Grid />
+
 
         {showBarrow && (
             
@@ -42,12 +50,7 @@ function Home() {
           </div>
 
         )}
-        {!showBarrow && (
-            <div className='prehome-screen'>
-
-                <Wheelbarrow2 />
-            </div>
-        )}  
+        
       </div>
     </div>
   );

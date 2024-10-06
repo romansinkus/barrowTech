@@ -16,10 +16,18 @@ function Home() {
         setShowBarrow(false); 
     }, 500); 
   };
+  const handleHome = () => {
+    setPanelVisible(false);
+    setTimeout(() => {
+        setShowBarrow(true); 
+    }, 500); 
+  };
 
   return (
     <div style={{ height: '100vh', cursor: 'pointer' }}>
       <div className="home">
+      <img src="home.svg" alt="Logo" className="svg-logo" onClick={handleHome} />
+
       <Grid />
       {/* {!showBarrow && (
             <div className='home-screen'>
@@ -44,7 +52,6 @@ function Home() {
             
             <div className="logo-container">
                 <div className='logo'>        
-                        {/* <img src='logo.png' height={200} width={200}></img> */}
                         <h2>BarrowTech</h2>
                 </div>
             </div>

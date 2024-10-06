@@ -1,12 +1,8 @@
 import React from 'react';
 import './Grid.css';
 
-interface GridProps {
-  rows: number;
-  columns: number;
-}
 
-const Grid: React.FC<GridProps> = () => {
+const Grid: React.FC = () => {
   return (
     <body>
     </body>

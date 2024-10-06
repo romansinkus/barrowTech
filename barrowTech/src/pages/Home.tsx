@@ -24,7 +24,7 @@ function Home() {
           </div>
         )}
         <Grid />
-        {!showCube ? <div className="cube-hidden" /> : <Cube />}
+        {showCube && <Cube />}
       </div>
     </div>
   );

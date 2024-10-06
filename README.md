@@ -23,13 +23,6 @@ Inside the 'backend' directory run the command: `python app.py` to launch the ba
 Inside the `barrowTech` directory:
 - run the command: `npm install` for the complete front-end package installation
 - run the command: `npm dev run` to launch the front-end processes and 
-Installing
-How/where to download your program
-Any modifications needed to be made to files/folders
-Executing program
-How to run the program
-Step-by-step bullets
-code blocks for commands
 Help
 Any advise for common problems or issues.
 

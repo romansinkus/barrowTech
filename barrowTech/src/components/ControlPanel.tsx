@@ -1,11 +1,25 @@
 import { Button } from '@mui/material';
 import './ControlPanel.css';
 import {Slider }from '@mui/material';
+import { useState } from 'react';
 
 
 function ControlPanel() {
+  const [sliderValues, setSliderValues] = useState([50, 50, 50]);
+
+  const handleSliderChange = (index: number) => (event: Event, newValue: number | number[]) => {
+    const newSliderValues = [...sliderValues];
+    newSliderValues[index] = newValue as number; 
+    setSliderValues(newSliderValues);
+  };
+
+
+  const handleSimulate = () => {
+    console.log("Slider values:", sliderValues);
+  };
 
   return (
+    
     <>
     <div className="panel">
         <div className='header'>        
@@ -14,17 +28,16 @@ function ControlPanel() {
         </div>
 
         <ul>
-            <li>slider 1</li>
-            <Slider defaultValue={50} aria-label="Default" valueLabelDisplay="auto" sx={{color: '#696969'}}/>
-            <li>slider 2</li>
-            <Slider defaultValue={50} aria-label="Default" valueLabelDisplay="auto" sx={{color: '#696969'}}/>
-
-            <li>slider 3</li>
-            <Slider defaultValue={50} aria-label="Default" valueLabelDisplay="auto" sx={{color: '#696969'}}/>
+            <li>variable 1</li>
+            <Slider defaultValue={50} aria-label="Default" valueLabelDisplay="auto" sx={{color: '#696969'}} onChange={handleSliderChange(0)} />
+            <li>variable 2</li>
+            <Slider defaultValue={50} aria-label="Default" valueLabelDisplay="auto" sx={{color: '#696969'}} onChange={handleSliderChange(1)}/>
+            <li>variable 3</li>
+            <Slider defaultValue={50} aria-label="Default" valueLabelDisplay="auto" sx={{color: '#696969'}} onChange={handleSliderChange(2)}/>
 
         </ul>
         <div className='simulate-button'>
-          <Button variant="outlined" color="#696969">Simulate</Button>
+          <Button variant="outlined" sx={{color: "#696969"}} onClick={handleSimulate}>Simulate</Button>
 
         </div>
     </div>

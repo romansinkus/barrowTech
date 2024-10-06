@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
-import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader.js'
+import { MTLLoader } from 'three/examples/jsm/loaders/MTLLoader.js'
+import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
+
 
 const Wheelbarrow: React.FC = () => {
 
@@ -8,7 +10,8 @@ const Wheelbarrow: React.FC = () => {
   
 
   useEffect(() => {
-    const fbxLoader = new FBXLoader();
+    const objLoader = new OBJLoader();
+    const mtlLoader = new MTLLoader();
 
     const scene = new THREE.Scene();
     const light = new THREE.DirectionalLight(0xffffff, 1);
@@ -24,28 +27,43 @@ const Wheelbarrow: React.FC = () => {
     if (mountRef.current) {
       mountRef.current.appendChild(renderer.domElement);
     }
-    fbxLoader.load(
-        'barrow2.fbx',
-        (object) => {
-            object.scale.set(100, 100, 100)
 
-            scene.add(object)
-            console.log(object.position)
-            console.log(object.scale)
+    let wheelbarrow: THREE.Object3D | null = null;
+    mtlLoader.load( 'barrow2.mtl', function ( materials ) {
+        materials.preload();
+        objLoader.setMaterials(materials)
+        .load(
+            'barrow2.obj',
+            (object) => {
+                wheelbarrow = object
+                wheelbarrow.scale.set(1, 1, 1)
+                wheelbarrow.position.y = -2
+    
+                scene.add(wheelbarrow)
+    
+            },
+            (xhr) => {
+                console.log((xhr.loaded / xhr.total) * 100 + '% loaded')
+            },
+            (error) => {
+                console.log(error)
+            }
+        )
 
-        },
-        (xhr) => {
-            console.log((xhr.loaded / xhr.total) * 100 + '% loaded')
-        },
-        (error) => {
-            console.log(error)
-        }
-    )
+    })
+
+
+
+    
+
+
 
     const animate = () => {
-    //   requestAnimationFrame(animate);
-    //   object.rotation.x += 0.01;
-    //   object.rotation.y += 0.01;
+      requestAnimationFrame(animate);
+    if (wheelbarrow) {
+        wheelbarrow.rotation.y += 0.01;
+    }
+    
       renderer.render(scene, camera);
     };
     animate();

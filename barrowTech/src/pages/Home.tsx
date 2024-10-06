@@ -5,15 +5,16 @@ import Cube from "../components/three/Test";
 import './Home.css'; 
 import { Button } from '@mui/material';
 import Wheelbarrow from '../components/three/Wheelbarrow';
+import Wheelbarrow2 from '../components/three/Wheelbarrow2';
 
 function Home() {
-  const [showCube, setShowCube] = useState(true);
+  const [showBarrow, setShowBarrow] = useState(true);
   const [panelVisible, setPanelVisible] = useState(false);
 
   const handleClick = () => {
     setPanelVisible(true);
     setTimeout(() => {
-      setShowCube(false); 
+        setShowBarrow(false); 
     }, 500); 
   };
 
@@ -27,7 +28,7 @@ function Home() {
         )}
         <Grid />
 
-        {showCube && (
+        {showBarrow && (
             
           <div className='prehome-screen'>
             
@@ -39,6 +40,13 @@ function Home() {
             <Wheelbarrow />
             {/* <Cube/> */}
           </div>
+
+        )}
+        {!showBarrow && (
+            <div className='prehome-screen'>
+
+                <Wheelbarrow2 />
+            </div>
         )}  
       </div>
     </div>

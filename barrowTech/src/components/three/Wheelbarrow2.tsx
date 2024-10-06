@@ -4,7 +4,7 @@ import { MTLLoader } from 'three/examples/jsm/loaders/MTLLoader.js'
 import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
 
 
-const Wheelbarrow: React.FC = () => {
+const Wheelbarrow2: React.FC = () => {
 
   const mountRef = useRef<HTMLDivElement | null>(null);
   
@@ -56,6 +56,8 @@ const Wheelbarrow: React.FC = () => {
                 wheelbarrow = object
                 wheelbarrow.scale.set(1, 1, 1)
                 wheelbarrow.position.y = -2
+                wheelbarrow.position.x = 1.4  
+                wheelbarrow.rotateY(-1.6)
     
                 scene.add(wheelbarrow)
     
@@ -79,7 +81,7 @@ const Wheelbarrow: React.FC = () => {
     const animate = () => {
       requestAnimationFrame(animate);
     if (wheelbarrow) {
-        wheelbarrow.rotation.y += 0.01;
+        // wheelbarrow.rotation.y += 0.01;
     }
     
       renderer.render(scene, camera);
@@ -96,4 +98,4 @@ const Wheelbarrow: React.FC = () => {
   return <div ref={mountRef} style={{ position: 'relative', width: '100%', height: '100vh' }} />;
 };
 
-export default Wheelbarrow;
+export default Wheelbarrow2;

@@ -38,10 +38,10 @@ function ControlPanel(props:any) {
 
         <ul>
             <li>Lifting Height (m)</li>
-            <Slider marks={[{value: 0, label: 0},{value: 1, label: 1}]} defaultValue={0.5} aria-label="Default" valueLabelDisplay="auto" sx={{color: '#696969'}}   min={0}
-  max={1}step={0.01} onChange={handleSliderChange(0)} />
+            <Slider marks={[{value: 0, label: 0},{value: 0.2, label: 0.2}]} defaultValue={0.1} aria-label="Default" valueLabelDisplay="auto" sx={{color: '#696969'}}  min={0}
+  max={0.2}step={0.001} onChange={handleSliderChange(0)} />
             <li>Gravel Mass (lbs)</li>
-            <Slider marks={[{value: 0, label: 0},{value: 100, label: 100}]} defaultValue={50} aria-label="Default" valueLabelDisplay="auto" sx={{color: '#696969'}} onChange={handleSliderChange(1)}/>
+            <Slider marks={[{value: 50, label: 50},{value: 120, label: 120}]} defaultValue={50} aria-label="Default" valueLabelDisplay="auto" sx={{color: '#696969'}} onChange={handleSliderChange(1)} min={50} max={120}/>
 
         </ul>
         <div className='simulate-button'>

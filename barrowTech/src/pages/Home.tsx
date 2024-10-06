@@ -45,8 +45,8 @@ function Home() {
 
         {panelVisible && (
           <div className="control-panel">
-            {(barrowMass ?? 0) > 70 && <img src='gravel.png' className={"gravel"} height={200} width={200} hidden={false}></img>}
-            {(barrowMass ?? 0) > 35 && <img src='gravel.png' className={"gravel2"} height={200} width={200} hidden={false}></img>}
+            {(barrowMass ?? 0) > 110 && <img src='gravel.png' className={"gravel"} height={200} width={200} hidden={false}></img>}
+            {(barrowMass ?? 0) > 75 && <img src='gravel.png' className={"gravel2"} height={200} width={200} hidden={false}></img>}
             <img src='gravel.png' className={"gravel3"} height={200} width={200}></img>
             <ControlPanel onMassChange={barrowMassChange} onHeightChange={LiftHeightChange}/>
             <Wheelbarrow2 rotation={liftHeight}/>

@@ -16,7 +16,7 @@ function ControlPanel() {
 
   const handleSimulate = () => {
     console.log("Slider values:", sliderValues);
-    
+
   };
 
   return (
@@ -29,12 +29,11 @@ function ControlPanel() {
         </div>
 
         <ul>
-            <li>variable 1</li>
-            <Slider defaultValue={50} aria-label="Default" valueLabelDisplay="auto" sx={{color: '#696969'}} onChange={handleSliderChange(0)} />
-            <li>variable 2</li>
+            <li>Lifting Height (m)</li>
+            <Slider defaultValue={0.5} aria-label="Default" valueLabelDisplay="auto" sx={{color: '#696969'}}   min={0}
+  max={1}step={0.01} onChange={handleSliderChange(0)} />
+            <li>Gravel Mass (lbs)</li>
             <Slider defaultValue={50} aria-label="Default" valueLabelDisplay="auto" sx={{color: '#696969'}} onChange={handleSliderChange(1)}/>
-            <li>variable 3</li>
-            <Slider defaultValue={50} aria-label="Default" valueLabelDisplay="auto" sx={{color: '#696969'}} onChange={handleSliderChange(2)}/>
 
         </ul>
         <div className='simulate-button'>

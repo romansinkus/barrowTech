@@ -67,8 +67,11 @@ function Home() {
             <Wheelbarrow />
             <div className="button-container">
                     
-                <Button onClick={handleClick} variant="outlined" size='large' sx={{color: "#585858", width: '200px', height: '60px' }}  >START</Button>
+                <Button className='start-button' onClick={handleClick}  size='large' sx={{color: "#585858", width: '200px', height: '60px', fontSize: '30px', borderRadius:'14px'}}  >START
+                <img className='start-arrow' width='30px'height='30px' src='right.svg'></img>
 
+                </Button>
+                
             </div>
           </div>
 

@@ -126,6 +126,10 @@
     size: larger;
   }
 
+  .start-button:hover{
+    background-color: #34aaff66;
+  }
+
   .start-arrow {
     padding-left: "20px"
 

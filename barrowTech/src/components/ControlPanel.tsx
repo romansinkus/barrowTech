@@ -53,13 +53,16 @@ function ControlPanel(props: any) {
           <li>Gravel Mass (lbs)</li>
           <Slider
             marks={[
-              { value: 0, label: 0 },
-              { value: 100, label: 100 },
+              { value: 50, label: 50 },
+              { value: 120, label: 120 },
             ]}
             defaultValue={50}
             aria-label="Default"
             valueLabelDisplay="auto"
             sx={{ color: "#696969" }}
+            min={50}
+            max={120}
+            step={1}
             onChange={handleSliderChange(1)}
           />
         </ul>
@@ -67,11 +70,11 @@ function ControlPanel(props: any) {
           <Button
             size="large"
             sx={{
-              color: "#a0a7bc",
-              backgroundColor: "#696969",
+              color: "white",
+              backgroundColor: "blue",
               boxShadow: 3, // Drop shadow (MUI spacing scale)
               "&:hover": {
-                backgroundColor: "gray", // Background color on hover
+                backgroundColor: "#2a505a", // Background color on hover
                 borderColor: "black", // Border color on hover
                 boxShadow: 6, // Stronger shadow on hover
               },

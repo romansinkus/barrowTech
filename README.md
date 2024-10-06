@@ -1,1 +1,3 @@
 # barrowTech
+
+## Hosting instructions

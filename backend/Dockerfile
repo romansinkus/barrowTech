@@ -1,0 +1,32 @@
+# Use an official Python runtime as a parent image
+FROM python:3.9-slim
+
+# Set the working directory to /app
+WORKDIR /app
+
+# Install required C++11 libraries, ca-certificates, and MATLAB Runtime
+RUN apt-get update \
+      \
+    && apt-get install -y \
+            build-essential \
+            python3-dev \
+            ca-certificates \
+            wget \
+    && rm -rf /var/lib/apt/lists/* \
+    && wget -qO- https://ssd.mathworks.com/supportfiles/downloads/R2021b/Release/9/deployment_files/installer/complete/glnxa64/MATLAB_Runtime_R2021b_Update_9_glnxa64.zip \
+    | bsdtar -xvf- -C /opt \
+    && /opt/v94/install -mode silent -agreeToLicense yes
+
+# Install any needed packages specified in requirements.txt
+COPY requirements.txt /app/
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the current directory contents into the container at /app
+COPY . /app
+
+# Make port 5000 available to the world outside this container
+EXPOSE 5000
+
+# Run main when the container launches
+CMD ["uwsgi", "--http", "0.0.0.0:5000", "--master", "-p", "2", "-w", "main:app"]
+USER nobody

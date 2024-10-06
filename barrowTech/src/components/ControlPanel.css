@@ -58,11 +58,22 @@
   .result-screen{
     position: absolute;
     top: 16%; 
-    left: 260%;
+    left: 240%;
     height: 20px;
-    width: 400px;
+    width: 455px;
     font-size: larger;
     font-family: 'Figtree', sans-serif;
-
-
   }
+
+.result-border {
+  /* border: 2px solid #000; Your desired border color */
+  padding: 10px; /* Space between the border and content */
+  border-radius: 5px; /* Rounds corners */
+  margin-top: 10px; /* Space above the border */
+  background-color: #bfc4d2; /* Light grey background */
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.result-border.show {
+  opacity: 1; /* Fully visible when the show class is added */
+}

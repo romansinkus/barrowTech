@@ -10,10 +10,11 @@ export async function testRunMatlab(inputParam1: number, inputParam2: number) {
     };
 
     try {
-        console.log("TEST")
+        // console.log("TEST")
         const response = await axios.post(url, params);
-        console.log("TEST2")
+        // console.log("TEST2")
         console.log('Response:', response.data.stdout);
+        return response.data.stdout;
     } catch (error) {
         if (axios.isAxiosError(error)) {
             console.error('Error response:', error.response?.data);
@@ -21,6 +22,7 @@ export async function testRunMatlab(inputParam1: number, inputParam2: number) {
             console.error('Error message:', error.message);
         }
     }
+
 }
 
 testRunMatlab(0.16, 80);
